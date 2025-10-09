@@ -1,7 +1,7 @@
 package my.project.ChatHub.serviceImpl;
 
 import my.project.ChatHub.entity.CustomUserDetails;
-import my.project.ChatHub.entity.Users;
+import my.project.ChatHub.entity.User;
 import my.project.ChatHub.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +19,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users user = userRepository.findByEmail(username);
+        User user = userRepository.findByEmail(username);
         if (user == null) {
             throw new UsernameNotFoundException(username);
         }

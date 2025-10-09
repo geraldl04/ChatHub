@@ -9,13 +9,13 @@ import java.util.List;
 
 public class CustomUserDetails implements UserDetails {
 
-    private final Users user ;
+    private final User user ;
 
-    public CustomUserDetails(Users user) {
+    public CustomUserDetails(User user) {
         this.user = user;
     }
 
-    public Users getUserEntity(){
+    public User getUserEntity(){
         return user ;
     }
 

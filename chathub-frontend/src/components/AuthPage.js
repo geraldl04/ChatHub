@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/auth.css"; // import your CSS
-import socialMediaImg from "../styles/social-media.png";
+
 import { registerUser, loginUser } from "../api";
 import { useNavigate } from "react-router-dom";
 
@@ -25,7 +25,7 @@ export default function AuthPage() {
         e.preventDefault();
 
         if (password !== confirmPassword) {
-            setPasswordError("Passwords do not match!");
+            setPasswordError("Passwordet nuk perputhen");
             return;
         } else {
             setPasswordError("");
@@ -42,7 +42,7 @@ export default function AuthPage() {
                 setIsSignUp(false);
             }, 3000);
         } catch (err) {
-            setPasswordError(err.response?.data || "Registration failed!");
+            setPasswordError(err.response?.data || "Regjistrimi deshtoi ");
         }
     };
 
@@ -50,9 +50,10 @@ export default function AuthPage() {
         e.preventDefault();
         try {
             await loginUser({ email: email.toLowerCase(), password });
-            window.location.href = "/chat.html";
+            //for testing
+            window.location.href = "/Chat.js";
         } catch (err) {
-            setLoginError("Kredencialet janë vendosur gabim"); // inline message
+            setLoginError(err.response?.data ||"Kredencialet janë vendosur gabim");
         }
     };
 
@@ -179,8 +180,7 @@ export default function AuthPage() {
                         <h2>MirëSeVini në Chathub !</h2>
 
                             <div className="img sign-in">
-                                <img src={socialMediaImg} alt="Social Media"
-                                     />
+                                <img src="/social-media.png" alt="Social Media" />
                             </div>
 
                     </div>
@@ -188,8 +188,7 @@ export default function AuthPage() {
                 </div>
                 <div className="col align-items-center flex-col">
                     <div className="img sign-up">
-                        <img src={socialMediaImg} alt="Social Media"
-                        />
+                        <img src="/social-media.png" alt="Social Media" />
                     </div>
                     <div className="text sign-up">
                         <h2>Bashkohu me ne </h2>

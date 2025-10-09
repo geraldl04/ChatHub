@@ -3,7 +3,6 @@ package my.project.ChatHub.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 //si fillim nje user ka emrin , emailin , passwordin , rolin qe me duhet me vone dhe nje creationTime
 
     @Id //trajtohen automatikisht si kolone , dhe nqs si percak emer kolone  , primary key

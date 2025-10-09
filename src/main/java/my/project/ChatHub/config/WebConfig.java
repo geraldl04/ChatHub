@@ -17,7 +17,7 @@ public class WebConfig {
                         .allowedOrigins("http://localhost:3000")
                         .allowCredentials(true)
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .allowCredentials(true); // <-- essential for cookies
+                        .allowCredentials(true);
             }
         };
     }
